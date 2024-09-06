@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_performance_view/screen/expensive_list_bad_screen.dart';
+import 'package:flutter_performance_view/screen/expensive_list_good_screen.dart';
+
 import 'package:flutter_performance_view/screen/home_screen.dart';
 
 void main() {
@@ -17,7 +20,23 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const HomeScreen(),
-      // '/1/bad': (context) => const GoodPage(),
+      routes: const {},
+      onGenerateRoute: (settings) {
+        if (settings.name == '/1/bad') {
+          final args = settings.arguments as String;
+          return MaterialPageRoute(
+            builder: (context) => ExpensiveListBadScreen(argument: args),
+          );
+        }
+        if (settings.name == '/1/good') {
+          final args = settings.arguments as String;
+          return MaterialPageRoute(
+            builder: (context) => ExpensiveListGoodScreen(argument: args),
+          );
+        }
+
+        return null;
+      },
     );
   }
 }

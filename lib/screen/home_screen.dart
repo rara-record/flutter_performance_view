@@ -32,7 +32,8 @@ Widget _buildWidget(BuildContext context) {
       return Center(
         child: ElevatedButton(
           onPressed: () {
-            Navigator.pushNamed(context, pageData[index]['route']);
+            Navigator.pushNamed(context, pageData[index]['route'],
+                arguments: pageData[index]['text']);
           },
           child: Text(pageData[index]['text']),
         ),
@@ -45,11 +46,11 @@ Widget _buildWidget(BuildContext context) {
 List pageData = [
   {
     "route": "/1/bad",
-    "text": "STEP ONE BAD CASE",
+    "text": "1. EXPENSIVE LIST BAD CASE",
   },
   {
     "route": "/1/good",
-    "text": "STEP ONE GOOD CASE",
+    "text": "2. EXPENSIVE LIST GOOD CASE",
   },
   {
     "route": "/2/bad",
