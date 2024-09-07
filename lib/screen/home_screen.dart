@@ -50,15 +50,15 @@ List pageData = [
   },
   {
     "route": "/1/good",
-    "text": "2. EXPENSIVE LIST GOOD CASE",
+    "text": "1. EXPENSIVE LIST GOOD CASE",
   },
   {
     "route": "/2/bad",
-    "text": "STEP TWO BAD CASE",
+    "text": "2. PRODUCT LIST BAD CASE",
   },
   {
     "route": "/2/good",
-    "text": "STEP TWO GOOD CASE",
+    "text": "2. PRODUCT LIST GOOD CASE",
   },
   {
     "route": "/3/bad",

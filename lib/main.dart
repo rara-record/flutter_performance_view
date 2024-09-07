@@ -3,6 +3,8 @@ import 'package:flutter_performance_view/screen/expensive_list_bad_screen.dart';
 import 'package:flutter_performance_view/screen/expensive_list_good_screen.dart';
 
 import 'package:flutter_performance_view/screen/home_screen.dart';
+import 'package:flutter_performance_view/screen/product_list_bad_screen.dart';
+import 'package:flutter_performance_view/screen/product_list_good_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,7 +36,18 @@ class MyApp extends StatelessWidget {
             builder: (context) => ExpensiveListGoodScreen(argument: args),
           );
         }
-
+        if (settings.name == '/2/bad') {
+          final args = settings.arguments as String;
+          return MaterialPageRoute(
+            builder: (context) => ProductListBadScreen(argument: args),
+          );
+        }
+        if (settings.name == '/2/good') {
+          final args = settings.arguments as String;
+          return MaterialPageRoute(
+            builder: (context) => ProductListGoodScreen(argument: args),
+          );
+        }
         return null;
       },
     );
